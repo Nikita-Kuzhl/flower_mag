@@ -1,0 +1,45 @@
+.color_default{
+  background-color: #FBE8E8;
+}
+.icon_size{
+  width: 30px;
+}
+.min_height{
+  min-height: 680px;
+}
+.error{
+  min-height: 630px;
+}
+.img_max_w{
+  max-height: 450px;
+}
+.button_transparate{
+  border-color: transparent;
+}
+.cart_count{
+  font-size: 14px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 6px;
+  vertical-align: top;
+  margin-left: -10px; 
+  
+  padding-left: 7px;
+  padding-right: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+.no_transfer{
+  white-space: nowrap;
+}
+.image_table{
+  max-width: 200px;
+  max-height: 200px;
+}
+button {
+  background: transparent;
+  border: none !important;
+  margin-left: 1px;
+  margin-right: 1px;
+}

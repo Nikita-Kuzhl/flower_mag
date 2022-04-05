@@ -44,17 +44,23 @@ const Header = () => {
               </Link>
             </Nav>
             <div className="text-center">
-            {!user.auth ? (
-              <ModalAuth />
-            ) : (
-              <>
-                <Cart />
-                <Link to="/cabinet" className="ms-4">
-                  <Button  variant="success">Личный кабинет</Button>
-                </Link>
-                <ExitButton/>
-              </>
-            )}
+              {!user.auth ? (
+                <ModalAuth />
+              ) : (
+                <>
+                  <Cart />
+                  {role.isAdmin ? (
+                    <Link to="/admin" className="ms-4">
+                      <Button variant="success">Админ панель</Button>
+                    </Link>
+                  ) : (
+                    <Link to="/cabinet" className="ms-4">
+                      <Button variant="success">Личный кабинет</Button>
+                    </Link>
+                  )}
+                  <ExitButton />
+                </>
+              )}
             </div>
           </Navbar.Collapse>
         </Container>

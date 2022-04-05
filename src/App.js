@@ -14,6 +14,7 @@ import { observer } from "mobx-react-lite";
 import Cabinet from "./pages/Cabinet";
 import { useEffect } from "react";
 import role from "./store/role";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   useEffect(() => {
@@ -30,8 +31,16 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/about" element={<About />} />
         <Route path="/category/:id" element={<Products />} />
-        {user.auth ? <Route path="/cart" element={<Cart />} /> : <></>}
-        <Route path="/cabinet" element={<Cabinet />} />
+        {user.auth ? (
+          <>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/cabinet" element={<Cabinet />} />{" "}
+          </>
+        ) : (
+          <></>
+        )}
+        {role.isAdmin?<Route path="/admin" element={<AdminPanel/>}/>:<></>}
+
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

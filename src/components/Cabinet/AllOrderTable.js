@@ -5,6 +5,7 @@ import {
 } from "react-bootstrap";
 
 const AllOrderTable = (props) => {
+  console.log(props.data);
   return (
     <>
       {props.loading ? (
@@ -20,6 +21,7 @@ const AllOrderTable = (props) => {
                   <th>№ Заказа</th>
                   <th>Наименования</th>
                   <th>Статус</th>
+                  {props.data.some(item=>item.status==="Отказ")?<th>Комментарий</th>:<></>}
                 </tr>
               </thead>
               <tbody>
@@ -34,6 +36,7 @@ const AllOrderTable = (props) => {
                       ))}
                     </td>
                     <td>{item.status}</td>
+                    {item.status==="Отказ"?<td>{item.comment}</td>:<td></td>}
                   </tr>
                 ))}
               </tbody>

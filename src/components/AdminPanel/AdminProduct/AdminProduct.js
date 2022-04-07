@@ -21,12 +21,13 @@ const AdminProduct = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+  const [id, setId] = useState("");
   const [showRead, setShowRead] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   // Редактирование продукта
-  const fetchReadProduct = (id) => {
+  const fetchReadProduct = () => {
     const dataJson = JSON.stringify({
       id,
       name,
@@ -48,6 +49,7 @@ const AdminProduct = () => {
         setPrice("");
         setDescription("");
         setData(response.data.values);
+        setShowRead(false)
       })
       .catch((err) => console.log(err));
   };
@@ -93,7 +95,7 @@ const AdminProduct = () => {
         setName("");
         setPrice("");
         setDescription("");
-        setShowAdd(false)
+        setShowAdd(false);
       })
       .catch((err) => {
         alert(err.response.data.values.message);
@@ -132,7 +134,10 @@ const AdminProduct = () => {
                   <td>{item.price}</td>
                   <td>
                     <Button
-                      onClick={() => setShowRead(true)}
+                      onClick={() => {
+                        setShowRead(true);
+                        setId(item.id);
+                      }}
                       variant="secondary"
                     >
                       Редактировать
@@ -145,53 +150,46 @@ const AdminProduct = () => {
                       Удалить
                     </Button>
                   </td>
-                  <Modal
-                    centered
-                    show={showRead}
-                    onHide={() => setShowRead(false)}
-                  >
-                    <Modal.Header closeButton>Редактировать товар</Modal.Header>
-                    <Modal.Body>
-                      <FormGroup>
-                        <Form.Label>Название</Form.Label>
-                        <Form.Control
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                        ></Form.Control>
-                        <Form.Label>Описание</Form.Label>
-                        <Form.Control
-                          value={description}
-                          onChange={(e) => setDescription(e.target.value)}
-                          as="textarea"
-                        ></Form.Control>
-                        <Form.Label>Цена</Form.Label>
-                        <Form.Control
-                          value={price}
-                          onChange={(e) => setPrice(e.target.value)}
-                        ></Form.Control>
-                        <Form.Label className="mt-2">Категория</Form.Label>
-                        <Form.Select
-                          onChange={(e) => setCategoryId(e.target.value)}
-                        >
-                          {category.map((i) => (
-                            <option value={i.id} key={i.id}>
-                              {i.name}
-                            </option>
-                          ))}
-                        </Form.Select>
-                      </FormGroup>
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button
-                        onClick={() => fetchReadProduct(item.id)}
-                        variant="success"
-                      >
-                        Изменить
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
                 </tr>
               ))}
+              <Modal centered show={showRead} onHide={() => setShowRead(false)}>
+                <Modal.Header closeButton>Редактировать товар</Modal.Header>
+                <Modal.Body>
+                  <FormGroup>
+                    <Form.Label>Название</Form.Label>
+                    <Form.Control
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    ></Form.Control>
+                    <Form.Label>Описание</Form.Label>
+                    <Form.Control
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      as="textarea"
+                    ></Form.Control>
+                    <Form.Label>Цена</Form.Label>
+                    <Form.Control
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                    ></Form.Control>
+                    <Form.Label className="mt-2">Категория</Form.Label>
+                    <Form.Select
+                      onChange={(e) => setCategoryId(e.target.value)}
+                    >
+                      {category.map((i) => (
+                        <option value={i.id} key={i.id}>
+                          {i.name}
+                        </option>
+                      ))}
+                    </Form.Select>
+                  </FormGroup>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={() => fetchReadProduct()} variant="success">
+                    Изменить
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </tbody>
           </Table>
           <div className="mt-5 mb-3 text-end me-5">

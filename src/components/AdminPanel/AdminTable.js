@@ -73,6 +73,7 @@ const AdminTable = () => {
         alert('Вы отменили заказ');
         setData(response.data.values)
         setComment("");
+        setShow(false)
       })
       .catch((err) => console.log(err));
   };

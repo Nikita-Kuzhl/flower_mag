@@ -1,18 +1,81 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Collage = () => {
   return (
     <div>
-      <Container className='mt-3'>
-        <Row sm={1} xs={1} md={1} lg={3} className='d-flex flex-row w-100 m-auto mb-5'>
-          <Col className='mt-5 justify-content-center d-flex'><img className='shadow-lg circle rounded' width={300} height={300}  src='/img/cvet3.jpg' alt='collage'/></Col>
-          <Col className='mt-5 justify-content-center d-flex'><img className='shadow-lg circle rounded' width={300} height={300}  src='/img/cvet4.jpg' alt='collage'/></Col>
-          <Col className='mt-5 justify-content-center d-flex'><img className='shadow-lg circle rounded' width={300} height={300}  src='/img/cvet5.jpg' alt='collage'/></Col>
+      <Container className="mt-3">
+        <Row
+          sm={1}
+          xs={1}
+          md={1}
+          lg={2}
+          className="d-flex flex-row w-100 m-auto mb-5"
+        >
+          <Col className="mt-5 justify-content-center d-flex">
+            <img
+              className="shadow-lg circle rounded"
+              width={300}
+              height={300}
+              src="/img/cvet3.jpg"
+              alt="collage"
+            />
+          </Col>
+          <Col className="justify-content-center d-flex m-auto pt-5 fs-5">
+            Букеты для любых ситуаций Современный ритм жизни не обходится без
+            выразительного «языка цветов», сохранившего свою актуальность. Цветы
+            являются ассоциацией с нежностью и страстью, виной и смирением,
+            благодарностью и любовью. Вы не знакомы с понятием цветовой гаммы?
+            Это не проблема. Обратившись к нашим специалистам, вы получите
+            услугу по индивидуальному созданию букета, с учетом вкусов и
+            возраста получателя, в соответствии с конкретным поводом для
+            презента.
+          </Col>
+          <Col className="justify-content-center d-flex m-auto pt-5 fs-5">
+            Человек, который дарит цветы, должен поделиться положительными
+            эмоциями, обусловленным внешней красотой и неповторимым ароматом.
+            Розы ассоциируются с приятными мыслями, ромашки помогают
+            успокоиться, вспомнить о счастливых моментах жизни. Яркость
+            ароматных ноток, присущая пионам, наполняет хорошим настроением.
+            Цветов много, но нельзя забывать о правильной презентации.
+            Оформление букета напрямую влияет на ощущения, свойственные
+            получателю. Наш магазин цветов обеспечивает помощью компетентных
+            флористов, сопроводительными открытками и прочими приятными
+            аксессуарами, своевременной доставкой, тщательно продуманным
+            сервисом.
+          </Col>
+          <Col className="mt-5 justify-content-center d-flex">
+            <img
+              className="shadow-lg circle rounded"
+              width={300}
+              height={300}
+              src="/img/cvet4.jpg"
+              alt="collage"
+            />
+          </Col>
+          <Col className="mt-5 justify-content-center d-flex">
+            <img
+              className="shadow-lg circle rounded"
+              width={300}
+              height={300}
+              src="/img/cvet5.jpg"
+              alt="collage"
+            />
+          </Col>
+          <Col className="justify-content-center d-flex m-auto pt-5 fs-5">
+            Букеты для любых ситуаций Современный ритм жизни не обходится без
+            выразительного «языка цветов», сохранившего свою актуальность. Цветы
+            являются ассоциацией с нежностью и страстью, виной и смирением,
+            благодарностью и любовью. Вы не знакомы с понятием цветовой гаммы?
+            Это не проблема. Обратившись к нашим специалистам, вы получите
+            услугу по индивидуальному созданию букета, с учетом вкусов и
+            возраста получателя, в соответствии с конкретным поводом для
+            презента.
+          </Col>
         </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Collage
+export default Collage;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Tab, Tabs} from "react-bootstrap";
 import AdminCategory from "../components/AdminPanel/AdminCategory";
-import AdminProduct from "../components/AdminPanel/AdminProduct";
+import AdminProduct from "../components/AdminPanel/AdminProduct/AdminProduct";
 import AdminTable from "../components/AdminPanel/AdminTable";
 
 const AdminPanel = () => {

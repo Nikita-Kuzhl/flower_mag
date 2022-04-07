@@ -14,8 +14,8 @@ const OrderButton = () => {
         "Content-Type": "application/json",
         'Authorization':localStorage.getItem('token')
       }
-    }).then(response=>{
-      alert(response.data.values.message)
+    }).then(()=>{
+      alert('Ваш заказ оформлен')
       cart.addOrder()
       setShow(false)
     }).catch(err=>{
